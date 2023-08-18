@@ -1,4 +1,5 @@
 "use client";
+// this is a website using Next.js, Reacct Scroll and Tailwind CSS 
 import Head from "next/head";
 import Link from 'next/link';
 import React from "react";
@@ -25,6 +26,7 @@ import './GoogleFonts.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+// Code is in JavaScript, tsx is a extension (typescript code with JSX syntax)
 export default function Home() {
   const [someState, setSomeState] = useState(false);
   const router = useRouter();
@@ -217,10 +219,10 @@ export default function Home() {
       </div>
       {/* same process for the rest of the cards */}
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-        <div className="flex justify-center py-4">
-          <Image src={folxLogo} alt="folx_logo" width={200} height={200} />
+        <div className="flex justify-center py-4">{/* centering the card */}
+          <Image src={folxLogo} alt="folx_logo" width={200} height={200} /> {/* inserting the image and how big it will be */}
         </div>
-        <h3 className="text-2xl pb-2 text-center">
+        <h3 className="text-2xl pb-2 text-center"> {/* padding on the bottom, centering the text */}
           <a
             href="https://www.folxhealth.com/"
             className="hover:text-blue-500 underline"
@@ -246,10 +248,10 @@ export default function Home() {
 
       {/* same process for the rest of the cards */}
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-        <div className="flex justify-center py-4">
-          <Image src={plumeLogo} alt="plume_logo" width={200} height={200} />
+        <div className="flex justify-center py-4"> {/* centering the card */}
+          <Image src={plumeLogo} alt="plume_logo" width={200} height={200} /> {/* inserting the image and how big it will be */}
         </div>
-        <h3 className="text-2xl pb-2 text-center">
+        <h3 className="text-2xl pb-2 text-center"> {/* padding on the bottom, centering the text */}
           <a
             href="https://getplume.co/"
             className="hover:text-blue-700 underline"
@@ -269,10 +271,10 @@ export default function Home() {
       </div>
       {/* same process for the rest of the cards */}
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-        <div className="flex justify-center">
-          <Image src={trueuLogo} alt="true-u" width={300} height={300} />
+        <div className="flex justify-center"> {/* centering the card */}
+          <Image src={trueuLogo} alt="true-u" width={300} height={300} />  {/* inserting the image and how big it will be */}
         </div>
-        <h3 className="text-2xl pb-2 text-center">
+        <h3 className="text-2xl pb-2 text-center"> {/* padding on the bottom, centering the text */}
           <a
             href="https://trueuclinic.com/"
             className="hover:text-blue-700 underline"
@@ -292,6 +294,7 @@ export default function Home() {
       </div>
       </div>
       </div>
+
       {/* same process for the rest of the cards, except that this time this is for the grants */}
       <div id = "grants-section">
       <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" style={{ fontFamily: "'Play', sans-serif" }}>
@@ -307,10 +310,10 @@ export default function Home() {
       </div>
 
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-        <div className="flex justify-center">
-          <Image src={POP} alt="POP" width={300} height={300} />
+        <div className="flex justify-center"> {/* centering the card */}
+          <Image src={POP} alt="POP" width={300} height={300} /> {/* inserting the image and how big it will be */}
         </div>
-        <h3 className="text-2xl pb-2 text-center">
+        <h3 className="text-2xl pb-2 text-center"> {/* padding on the bottom, centering the text */}
           <a
             href="https://www.pointofpride.org/hrt-access-fund"
             className="hover:text-blue-700 underline"
@@ -334,10 +337,10 @@ export default function Home() {
       </div>
 
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-        <div className="flex justify-center">
-          <Image src={genderBands} alt="genderBands" width={200} height={200} />
+        <div className="flex justify-center"> {/* centering the card */}
+          <Image src={genderBands} alt="genderBands" width={200} height={200} /> {/* inserting the image and how big it will be */}
         </div>
-        <h3 className="text-2xl pb-2 text-center">
+        <h3 className="text-2xl pb-2 text-center"> {/* padding on the bottom, centering the text */}
           <a
             href="https://www.genderbands.org/grants"
             className="hover:text-blue-700 underline"
@@ -378,7 +381,10 @@ export default function Home() {
       </div> 
   );
 }
+
 {/* THINGS YOU SHOULD ADD */}
 {/* Adding a "Scroll to Top" button*/}
 {/* Implementing a dark mode*/}
+{/* Make it mobile friendly*/}
 {/* Make an actual email contact form with Email.js*/}
+{/* Possible "newsletter" or reminder to apply to grants*/}
