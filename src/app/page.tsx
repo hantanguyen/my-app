@@ -37,13 +37,13 @@ export default function Home() {
               </a>
             </li>
             <li className="px-6 py-2">
-              <a href="/Services"className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Services</a>
+              <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Services</a>
             </li>
             <li className="px-6 py-2">
-              <a href="/Grants" className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Grants</a>
+              <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Grants</a>
             </li>
             <li className="px-6 py-2">
-            <a href="/MyBlog" className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>My Blog</a>
+            <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>My Blog</a>
             </li>
           </ul>
         </nav>
