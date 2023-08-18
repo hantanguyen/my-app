@@ -2,7 +2,6 @@
 import Head from "next/head";
 import Link from 'next/link';
 import React from "react";
-import { BsFillMoonStarsFill } from "react-icons/bs";
 import Image from "next/image";
 import myImage from "../../public/hori-pic.png";
 import ppLogo from "../../public/pp_Logo.png";
@@ -13,12 +12,11 @@ import tboyswagLogo from "../../public/tboyswag logo.png";
 import Sharktboy from "../../public/Sharktoboy swag logotext.png";
 import POP from  "../../public/PointOfPride.png";
 import genderBands from  "../../public/genderbandspng.png";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 import './GoogleFonts.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [someState, setSomeState] = useState(false);
@@ -30,25 +28,66 @@ export default function Home() {
         <Image src={tboyswagLogo} alt="tboyswagLogo" px-2 ml-0 width={200} height={200}/>
         </h1>
         <nav className="flex items-center space-x-4 ml-auto">
-          <ul className="flex items-center space-x-4">
-            <li className="px-6 py-2">
-              <a href="/" className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>
-                Home
-              </a>
-            </li>
-            <li className="px-6 py-2">
-              <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Services</a>
-            </li>
-            <li className="px-6 py-2">
-              <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>Grants</a>
-            </li>
-            <li className="px-6 py-2">
-            <a className="hover:text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>My Blog</a>
-            </li>
-          </ul>
-        </nav>
+        <ul className="flex items-center space-x-4">
+          <li className="px-6 py-2">
+            <ScrollLink
+              to="home-section" // Replace with the corresponding section ID
+              spy={true}
+              smooth={true}
+              offset={-600} // Adjust the offset as needed
+              duration={500} // Adjust the scroll duration as needed
+              className="hover:text-blue-700"
+              style={{ fontFamily: "'Play', sans-serif" }}
+            >
+              Home
+            </ScrollLink>
+          </li>
+
+          <li className="px-6 py-2">
+            <ScrollLink
+              to="services-section" // Replace with the corresponding section ID
+              spy={true}
+              smooth={true}
+              offset={-300} // Adjust the offset as needed
+              duration={500} // Adjust the scroll duration as needed
+              className="hover:text-blue-700"
+              style={{ fontFamily: "'Play', sans-serif" }}
+            >
+              Services
+            </ScrollLink>
+          </li>
+
+          <li className="px-6 py-2">
+            <ScrollLink
+              to="grants-section" // Replace with the corresponding section ID
+              spy={true}
+              smooth={true}
+              offset={-70} // Adjust the offset as needed
+              duration={500} // Adjust the scroll duration as needed
+              className="hover:text-blue-700"
+              style={{ fontFamily: "'Play', sans-serif" }}
+            >
+              Grants
+            </ScrollLink>
+          </li>
+
+          <li className="px-6 py-2">
+            <ScrollLink
+              to="myBlog-section" // Replace with the corresponding section ID
+              spy={true}
+              smooth={true}
+              offset={-70} // Adjust the offset as needed
+              duration={500} // Adjust the scroll duration as needed
+              className="hover:text-blue-700"
+              style={{ fontFamily: "'Play', sans-serif" }}
+            >
+              My Blog
+            </ScrollLink>
+          </li>
+
+        </ul>
+      </nav>
         <div className="flex items-center space-x-4">
-          <BsFillMoonStarsFill className="cursor-pointer text-2xl py-1" />
           <a
             href="#"
             className="bg-gradient-to-r from-blue-700 text- to-blue-700 text-white px-4 py-2 border-none rounded-md ml-8" style={{ fontFamily: "'Play', sans-serif" }}
@@ -62,7 +101,7 @@ export default function Home() {
       </section>
       <section className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
   <div className="flex justify-center items-center">
-    <div>
+    <div id="home-section">
       <h2 className="text-5xl py-2 text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>
         About Me
       </h2>
@@ -113,6 +152,7 @@ export default function Home() {
 </section>
 
       <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" style={{ fontFamily: "'Play', sans-serif" }}>
+      <div id="home-section">
         <h3 className="text-5xl py-1 text-blue-700">Exploring different options to ensure that you can access HRT</h3>
         <p className="text-lg py-2 leading-8">
           Navigating access to hormone replacement therapy can sometimes be
@@ -122,6 +162,7 @@ export default function Home() {
           not endorsed by any of these companies.
         </p>
       </div>
+      <div id = "services-section">
       <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
         <div className="flex justify-center">
           <Image src={ppLogo} alt="pp_Logo" width={200} height={200} />
@@ -219,6 +260,10 @@ export default function Home() {
         <p className="text-gray-800 py-1">Hormone Replacement Therapy</p>
         <p className="text-gray-800 py-1">PrEP and STI Testing</p>
       </div>
+      </div>
+      </div>
+
+      <div id = "grants-section">
       <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" style={{ fontFamily: "'Play', sans-serif" }}>
         <h3 className="text-5xl py-1 text-blue-700">Financial Aid and Grants for HRT</h3>
         <p className="text-lg py-2 leading-8">
@@ -277,12 +322,27 @@ export default function Home() {
         Applications are accepted annually from October 1 to November 30, with grants awarded the following year. 
         </p>
         <h4 className="text-lg py-4 text-blue-700"><strong>Services Offered</strong></h4>
+        <p className="text-gray-800 py-1">Social Transitioning Grant</p>
         <p className="text-gray-800 py-1">Hormone Replacement Therapy Grant</p>
+        <p className="text-gray-800 py-1">Gender Affirming Healthcare Travel Grant</p>
       </div>
+      </div>
+      <div id="myBlog-section">
 
-      <section className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
-          <ContactForm/>
-        </section>
-    </div>
+      <div className="bg-white text-center shadow-lg p-10 rounded-xl my-10 mx-auto max-w-5xl dark:bg-white" style={{ fontFamily: "'Play', sans-serif" }}>
+      <h2 className="text-5xl py-2 text-blue-700" style={{ fontFamily: "'Play', sans-serif" }}>
+        Tboy Blogs!
+      </h2>
+        <p className="text-lg py-2 text-left">
+        Hi, stay tuned for my upcoming blog when I start HRT in October! Here I will document my progress, highs and lows included. 
+        </p>
+        </div>
+        <div className="py-4 px-10 md:px-20 lg:px-40 bg-gray-100 dark:bg-gray-800 flex justify-between" style={{ fontFamily: "'Play', sans-serif" }}>    
+        <div className="position: absolute; bottom: 5px; ">
+        Email me: hantanguyen@gmail.com &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; © 2023 Hori Nguyen All Rights Reserved.
+        </div>
+        </div>
+      </div> 
+      </div> 
   );
 }
